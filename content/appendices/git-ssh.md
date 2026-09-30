@@ -65,7 +65,7 @@ List the SSH directory before creating anything:
 ls -al ~/.ssh
 ```
 
-Common key pairs are named `id_ed25519` and `id_ed25519.pub`. The file **without** `.pub` is private; the matching file ending in `.pub` is public. Do not copy the private file into a chat, email, repository or GitHub account. Do not overwrite an existing key merely because its filename appears in a tutorial.
+Common key pairs are named `id_ed25519` and `id_ed25519.pub` (Note: it is not a placeholder for your personal username). The file **without** `.pub` is private; the matching file ending in `.pub` is public. Do not copy the private file into a chat, email, repository or GitHub account. Do not overwrite an existing key merely because its filename appears in a tutorial.
 
 If you need a new software key, generate an Ed25519 key with an account email as a label:
 
@@ -94,7 +94,7 @@ cat ~/.ssh/id_ed25519.pub
 
 In GitHub, open **Settings → SSH and GPG keys → New SSH key**, give it a recognisable title, and paste the public key. Never upload the private-key file or its passphrase. GitHub's [adding an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) guide covers the account step.
 
-A server’s host-key fingerprint is a short identifier for its SSH key. Before accepting a new server host key, compare its fingerprint with [GitHub’s published SSH fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints). Do not disable host-key checking or accept a changed fingerprint blindly. Once the public key is added, test your account connection:
+A server’s host-key fingerprint is a short identifier for its SSH key (Note: this is completely unrelated to your laptop's biometric Touch ID). Before accepting a new server host key, compare its fingerprint with [GitHub’s published SSH fingerprints](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints). Do not disable host-key checking or accept a changed fingerprint blindly. Once the public key is added, test your account connection:
 
 ```bash
 ssh -T git@github.com
@@ -112,7 +112,7 @@ If a network specifically blocks SSH port 22, ask course or organisational IT wh
 
 ## Add and inspect a remote
 
-Create the repository on GitHub first, then work from the root of the local [repository](terms.md#repository-and-remote). Use the exact URL shown by GitHub and choose one protocol:
+Create the repository on GitHub first, then work from the root of the local [repository](terms.md#repository-and-remote) and initiate it by running `git init`. Use the exact URL shown by GitHub and choose one protocol:
 
 ```bash
 # SSH
